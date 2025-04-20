@@ -7,8 +7,8 @@
   font-family: "Inter", sans-serif;
 }
 body {
-  /* width: 100%; */
-  /* min-height: 100vh; */
+  width: 100%;
+  min-height: 100vh;
   /* background: linear-gradient(#f4f0ff, #dacdff); */
   background: transparent;
 }
