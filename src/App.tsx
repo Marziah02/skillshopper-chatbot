@@ -96,10 +96,10 @@ const App: React.FC = () => {
 
     if (result.length > 0 && result[0].score <= 0.3) {
       const bestMatch = result[0].item;
-      console.log("Matched with Fuse.js:", bestMatch);
-      console.log("userMessage:", userMessage);
-      console.log("Fuse match:", result[0]?.item);
-      console.log("Match score:", result[0]?.score);
+      // console.log("Matched with Fuse.js:", bestMatch);
+      // console.log("userMessage:", userMessage);
+      //  console.log("Fuse match:", result[0]?.item);
+      // console.log("Match score:", result[0]?.score);
 
       setChatHistory((prev) => [
         ...prev.filter((msg) => msg.text !== "Thinking..."),
@@ -120,9 +120,9 @@ const App: React.FC = () => {
 
       // Fall back to similarity
       const similarity = getSimilarity(userMessage, question);
-      console.log(
-        `Matching "${userMessage}" with "${qa.question}" → similarity: ${similarity}`
-      );
+      // console.log(
+      //   `Matching "${userMessage}" with "${qa.question}" → similarity: ${similarity}`
+      // );
       if (similarity > highestSimilarity) {
         highestSimilarity = similarity;
         bestMatch = qa;
@@ -131,7 +131,7 @@ const App: React.FC = () => {
 
     // ✅ Threshold match (adjust if needed)
     if (highestSimilarity >= 0.3 && bestMatch) {
-      console.log("Matched predefined QA:", bestMatch);
+      // console.log("Matched predefined QA:", bestMatch);
       setChatHistory((prev) => [
         ...prev.filter((msg) => msg.text !== "Thinking..."),
         { role: "model", text: bestMatch.answer },
