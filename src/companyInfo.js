@@ -1,19 +1,41 @@
 // Dummy company information for chatbot
 export const companyInfo = `
 Introduction:
-Hello! I'm your friendly SkillShoper chatbot, here to assist you with anything you need related to our soft skills training platform. Whether you're looking for information about our courses, enrollment process, or career development tips, I'm here to help.
+I'm your friendly SkillShoper chatbot, here to help you navigate your learning journey! Whether you’re curious about our soft skills courses, need help enrolling, or want to know about certificates, I’m here for you 24/7.
 
 Details:
-SkillShoper is Bangladesh's premier destination for soft skills training. We specialize in providing top-notch courses in communication, leadership, time management, and more, all designed to empower your career and personal growth. Our expert-led, interactive courses are tailored to meet the demands of the modern workplace, ensuring you gain practical skills applicable to real-world scenarios.
+SkillShoper is a Bangladesh-based e-learning platform dedicated to helping individuals enhance their personal and professional lives through soft skills development. Our mission is to make essential life skills accessible to everyone — from students and job seekers to working professionals and entrepreneurs.
 
-Located in Dhaka, Bangladesh, our platform offers flexible learning options to suit your schedule and preferences. Whether you prefer live interactive sessions or self-paced recorded courses, SkillShoper has you covered.
+We offer practical, industry-relevant training focused on communication, leadership, time management, personality development, and more. Whether you're preparing for the job market or looking to grow within your career, SkillShoper helps you build the skills employers value most.
 
-Stay connected with us through our vibrant social media community. Follow us for updates, learning tips, and special promotions on:
-- Facebook: https://www.facebook.com/Skillshoper/
+Our courses are designed and delivered by experienced trainers, featuring interactive lessons, real-world case studies, and a learner-centered approach. You can learn at your own pace or join live sessions — all from the comfort of your home.
 
-For inquiries, feel free to reach out via email at skillshoperbd@gmail.com or call us at +8801328964577.
+Location:
+We're headquartered in Dhaka, Bangladesh. Visit us at:
+Floor – 7A, House 3/1, Block F, Lalmatia, Mohammadpur, Dhaka 1207, Bangladesh.
 
-Our website, https://skillshoper.com/, offers a seamless learning experience. Explore our diverse range of courses, access resources, and take the next step in your professional journey.
+Hours:
+We’re always available online, and our team is here to support you during standard business hours:
+- Sunday to Thursday: 9:00 AM – 6:00 PM (BST)
+- Friday-Saturday: Support available via email.
+
+Stay connected with us on social media for updates, success stories, and learning tips:
+- Facebook: https://facebook.com/skillshoper
+- LinkedIn: https://linkedin.com/company/skillshoper
+
+You can also reach out to us directly:
+- Phone: +8801328964577
+- Email: skillshoperbd@gmail.com
+
+Explore more at our website: https://skillshoper.com — here, you can browse courses, register easily, and start learning instantly.
+
+Popular Courses:
+- Effective Communication Skills
+- Time Management & Productivity
+- Leadership & Teamwork
+- Self-Development & Personality Analysis
+- 21st Century Soft Skills
+- Interview & Job Preparation Skills
 
 Courses:
 - Effective Communication Skills - ৳10,000
@@ -25,5 +47,12 @@ Courses:
 - Career Planning - ৳10,000
 - Personal Development Planning - ৳10,000
 
-At SkillShoper, we believe in unlocking your full potential. Whether you're aiming to advance your career, explore new passions, or enhance your skills, we've got something special for everyone.
+Features:
+- Learn anytime, anywhere.
+- Lifetime access to course content.
+- Certificates of completion.
+- Affordable pricing with local payment support.
+- Ideal for individuals and corporate teams.
+
+At SkillShoper, we believe soft skills are the key to standing out in today’s world. Whether you're trying to grow your confidence, prepare for interviews, or become a better leader, we’ve got the right tools to support your success.
 `;
