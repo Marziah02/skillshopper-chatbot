@@ -218,7 +218,7 @@ const App: React.FC = () => {
           <div className="message bot-message">
             <ChatbotIcon />
             <p className="message-text">
-              Hey there <br /> How can I help you today?
+              Welcome to SkillShoper. <br /> How can I help you?
             </p>
           </div>
           {/* Render the chat history dynamically */}
