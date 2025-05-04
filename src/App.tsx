@@ -6,6 +6,7 @@ import ChatMessage from "./components/ChatMessage";
 import { companyInfo } from "./companyInfo";
 import { predefinedQA } from "./predefinedQA";
 import Fuse from "fuse.js";
+import { BsChatRight } from "react-icons/bs";
 
 const App: React.FC = () => {
   const chatBodyRef = useRef();
@@ -17,6 +18,7 @@ const App: React.FC = () => {
       text: companyInfo,
     },
   ]);
+  const [isThinking, setIsThinking] = useState(false);
 
   // Basic similarity checker (token overlap percentage)
 
@@ -78,6 +80,12 @@ const App: React.FC = () => {
     const userMessage = normalizeUserMessage(history[history.length - 1].text);
     const result = fuse.search(userMessage);
     //const userMessage = history[history.length - 1].text;
+    //  setIsThinking(true); // show loader
+    // Step 1: Show loader "Thinking..." while processing
+    setChatHistory((prev) => [
+      ...prev.filter((msg) => msg.text !== "Thinking..."), // Remove any previous thinking message
+      { role: "model", text: "..." },
+    ]);
 
     // Step 1: Check similarity with predefined questions
     let bestMatch = null;
@@ -100,9 +108,9 @@ const App: React.FC = () => {
       // console.log("userMessage:", userMessage);
       //  console.log("Fuse match:", result[0]?.item);
       // console.log("Match score:", result[0]?.score);
-
+      setIsThinking(false); // hide loader
       setChatHistory((prev) => [
-        ...prev.filter((msg) => msg.text !== "Thinking..."),
+        ...prev.filter((msg) => msg.text !== "..."),
         { role: "model", text: bestMatch.answer },
       ]);
       return;
@@ -131,9 +139,10 @@ const App: React.FC = () => {
 
     // ✅ Threshold match (adjust if needed)
     if (highestSimilarity >= 0.3 && bestMatch) {
+      setIsThinking(false); // hide loader
       // console.log("Matched predefined QA:", bestMatch);
       setChatHistory((prev) => [
-        ...prev.filter((msg) => msg.text !== "Thinking..."),
+        ...prev.filter((msg) => msg.text !== "..."),
         { role: "model", text: bestMatch.answer },
       ]);
       return;
@@ -143,8 +152,9 @@ const App: React.FC = () => {
     const contextPrompt = `Here is some background about our company:\n${companyInfo}\n\nUsing this info, answer the following user question:\n"${userMessage}"`;
 
     const updateHistory = (text, isError = false) => {
+      setIsThinking(false); // hide loader
       setChatHistory((prev) => [
-        ...prev.filter((msg) => msg.text !== "Thinking..."),
+        ...prev.filter((msg) => msg.text !== "..."),
         { role: "model", text, isError },
       ]);
     };
@@ -176,8 +186,9 @@ const App: React.FC = () => {
 
       updateHistory(apiResponseText);
     } catch (error) {
+      setIsThinking(false); // hide loader
       updateHistory(
-        "Sorry, I couldn't find an answer to your question. Please try rephrasing or visit our website: https://skillshoper.com",
+        "Sorry, I couldn't find an answer to your question. Please try rephrasing or visit our website: https://skillshoper.com or call us at +8801328964577.",
         true
       );
     }
@@ -196,7 +207,10 @@ const App: React.FC = () => {
         onClick={() => setShowChatbot((prev) => !prev)}
         id="chatbot-toggler"
       >
-        <span className="material-symbols-rounded">mode_comment</span>
+        <span className="material-symbols-rounded">
+          <BsChatRight className="chat-icon" />
+        </span>{" "}
+        {/* mode_comment */}
         <span className="material-symbols-rounded">close</span>
       </button>
       <div className="chatbot-popup">
@@ -225,6 +239,13 @@ const App: React.FC = () => {
           {chatHistory.map((chat, index) => (
             <ChatMessage key={index} chat={chat} />
           ))}
+          {/* Spinner shown when bot is thinking */}
+          {isThinking && (
+            <div className="message bot-message loader">
+              <ChatbotIcon />
+              <div className="spinner" />
+            </div>
+          )}
         </div>
         {/* Chatbot Footer */}
         <div className="chat-footer">

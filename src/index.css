@@ -227,4 +227,32 @@ body {
   .chat-footer {
     padding: 10px 15px 15px;
   }
+  .chat-icon {
+    color: #fff;
+    font-weight: bold;
+  }
+
+  .spinner {
+    width: 20px;
+    height: 20px;
+    border: 3px solid #ccc;
+    border-top: 3px solid #3498db;
+    border-radius: 50%;
+    animation: spin 0.8s linear infinite;
+    margin-left: 10px;
+  }
+
+  @keyframes spin {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+
+  .loader {
+    display: flex;
+    align-items: center;
+  }
 }

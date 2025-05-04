@@ -55,4 +55,7 @@ Features:
 - Ideal for individuals and corporate teams.
 
 At SkillShoper, we believe soft skills are the key to standing out in today’s world. Whether you're trying to grow your confidence, prepare for interviews, or become a better leader, we’ve got the right tools to support your success.
+
+not related this company:
+Sorry, I couldn't find an answer to your question. Please try rephrasing or visit our website: https://skillshoper.com or call us at +8801328964577.
 `;
